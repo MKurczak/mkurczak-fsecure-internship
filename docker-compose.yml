@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: SuperSecretUser
+      POSTGRES_PASSWORD: SuperSecretPassword
+      POSTGRES_DB: awsExcerciseProject
+  web:
+    build: .
+    command: bash -c "python application/manage.py makemigrations && python application/manage.py migrate && python application/manage.py runserver 0.0.0.0:8000 && python migrate.py syncdb" 
+    restart: on-failure
+    volumes:
+      - .:/application
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db

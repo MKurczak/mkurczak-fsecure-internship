@@ -1,0 +1,12 @@
+On the other hand AWS provides two sollutions to handling secrets. One is AWS System Manager Parameter Store which can hold some confidential informations, but second one that is interesting is AWS Secrets Manager.
+Aws Secrets Manager service is built-in sollution to handle secrets across other AWS services like EC2, RDS and more.
+Its connected to AWS IAM so depending on policy each group can use only this secrets that were assigned to their policy eg. developers can use (and probably see) only development secrets used in DEV environtment,
+database administrators will see only keys to RDS.
+
+Flow schema should look like this:
+- Developer want to deploy new iteration of development environtment.
+- Deploy requires some credentials stored in AWS Secrets Manager.
+- App is sending request to SM.
+- Developer IAM policy is checked if he got "powers" to request secrets.
+- (Assuming he can request them) Secrets Manager in response sends key to app.
+- New iteration of development environtment was deployed.

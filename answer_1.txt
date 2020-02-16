@@ -1,0 +1,3 @@
+Docker has introduced "Docker Secrets Manager" to avoid baking secrets into Docker images or keeping it in plain text.
+To keep it simple this "Secret Manager" use encrypted secrets placed on server. So basically developers should provide keys and Docker will manage them.
+There is only one requirement for that and its using Docker Swarm instead of Docker Compose.
