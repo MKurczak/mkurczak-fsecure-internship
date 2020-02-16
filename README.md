@@ -133,8 +133,8 @@ Accessing URL without any "/site" will result in default Django error page with 
   ```
   If everything was executed correctly instead of blank page there should be JSON like format (querySet) with database ID and records.
 ### Project directory structure
-
-  - application - root folder that holds Django project
+- mkurczak-fsecure-internship - main directory with Docker files/answers and scripts.
+   - application - root folder that holds Django project
     - app - Django app
     - awsExcerciseProject - Django project settings
     
@@ -150,6 +150,10 @@ application/app/models.py
 Where to look for urls settings?
 ```
 application/app/urls.py
+```
+Where to look for answers/scripts and docker files?
+```
+Everything should be in cloned repository main folder in this case "mkurczak-fsecure-internship"
 ```
 
 ### Author
